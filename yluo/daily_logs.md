@@ -2,6 +2,32 @@
 
 Link to my [meeting notes](https://docs.google.com/document/d/1LRnpN_eE1WZ5-LrI0CYndENyy3PiCGERJvU9nurvOXs/edit?usp=sharing)
 
+
+## Week 07/10 -- 07/16
+
+### 07/11 Tue
+
+- Attended the AI Testbed SombaNova training. The amount of work to alter the existing model and code will
+be a significant hindrance to use SombaNove. Tomorrow's training session might dive deeper into code alteration and compilation
+- Evaluated the RGB+Greyscale `compare_rgb16_rgb8_bs128_ep150` model with full sample. Result is shown in the first two figure.
+- Evaluated the random crop + random horizontal/vertical flip model `aug_vit_rgb16_ir8_bs128_ep150`. The result is shown as the 
+second set of figures. The clusterings are not as clear as full image model, such as `vit_rgb16_ir8_bs128_ep150`. This means the model 
+really relied somehow on the pointing. However, on the other hand, the separation still is very obvious, which means model can
+learn different information from different images.
+
+<img src="./plots/gs_tsne_all.png" alt="isolated" width="400"/>
+<img src="./plots/gs_tsne_four.png" alt="isolated" width="400"/>
+
+<img src="./plots/aug_tsne_all.png" alt="isolated" width="400"/>
+<img src="./plots/aug_tsne_four.png" alt="isolated" width="400"/>
+
+### 07/10 Mon
+
+- ALCF is down, so I have to wait.
+- Worked on planning for next steps
+- Worked on some astronomy stuff
+
+
 ## Week 07/03 -- 07/09
 
 ### 07/07 Fri
@@ -22,6 +48,7 @@ Link to my [meeting notes](https://docs.google.com/document/d/1LRnpN_eE1WZ5-LrI0
   - Look at attention map and check what clouds the models are paying attention to
   - Bhupendra has a framework for motion data for cloud, might look into that.
 - **Issue**: after 07/04, all ANL nodes should not be used for analysis because of some hardware alternations.
+- Started the random crop + flip model training. The model is `aug_vit_rgb16_ir8_bs128_ep150`
 
 
 ### 07/05 Wed
@@ -57,7 +84,7 @@ Independence day, no work
   - Have to understand what mapping between RGB and IR the model learned.
   - To compare what is learned, start another model to compare RGB+Greyscale images.
   - The greyscale image is composed from RGB only.
-- Started the RGB + Greyscale model training and well perform evaluation later.
+- Started the RGB + Greyscale model training and well perform evaluation later. The mode is `compare_rgb16_rgb8_bs128_ep150`
 
 ### 06/29 Thu
 
